@@ -1,0 +1,601 @@
+.appliances-page {
+  min-height: calc(100vh - 80px);
+  padding: 72px 0 100px;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.appliances-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.appliances-eyebrow {
+  margin-bottom: 14px;
+  color: var(--color-accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.appliances-header h1 {
+  max-width: 850px;
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  font-weight: 600;
+}
+
+.appliances-header h1 span {
+  display: block;
+  color: var(--color-text-muted);
+}
+
+.appliances-header__text {
+  max-width: 570px;
+  margin-top: 22px;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.appliances-add-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-width: 150px;
+  min-height: 50px;
+  padding: 0 20px;
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #0b0d0c;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.appliances-add-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(200, 255, 61, 0.14);
+}
+
+.appliances-add-button svg {
+  font-size: 0.78rem;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.appliances-form-section {
+  margin-bottom: 60px;
+}
+
+.appliances-form-card {
+  padding: 30px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.01)
+    );
+}
+
+.appliances-form-card__heading {
+  margin-bottom: 26px;
+}
+
+.appliances-form-card__heading p {
+  margin-bottom: 7px;
+  color: var(--color-accent);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.appliances-form-card__heading h2 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.appliances-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.appliances-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.appliances-form__field--full {
+  grid-column: 1 / -1;
+}
+
+.appliances-form__field label {
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.appliances-form__field input {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 13px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--color-text);
+  font-size: 0.83rem;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.appliances-form__field input::placeholder {
+  color: #656c68;
+}
+
+.appliances-form__field input:focus {
+  border-color: rgba(200, 255, 61, 0.45);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.appliances-form__error {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 100, 100, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 100, 100, 0.06);
+  color: #ff9b9b;
+  font-size: 0.78rem;
+}
+
+.appliances-image-upload {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 15px;
+  border: 1px dashed rgba(255, 255, 255, 0.13);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.appliances-image-upload:hover {
+  border-color: rgba(200, 255, 61, 0.35);
+  color: var(--color-text);
+}
+
+.appliances-image-upload svg {
+  color: var(--color-accent);
+}
+
+.appliances-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  grid-column: 1 / -1;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.appliances-form__cancel,
+.appliances-form__submit {
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.appliances-form__cancel {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+.appliances-form__submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-accent);
+  color: #0b0d0c;
+}
+
+.appliances-form__submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   TOOLBAR
+========================================= */
+
+.appliances-list-section {
+  margin-top: 20px;
+}
+
+.appliances-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 42px;
+}
+
+.appliances-search {
+  position: relative;
+  flex: 1;
+}
+
+.appliances-search svg {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+}
+
+.appliances-search input,
+.appliances-filter {
+  height: 48px;
+  border: 1px solid var(--color-border);
+  border-radius: 13px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--color-text);
+  font-size: 0.78rem;
+}
+
+.appliances-search input {
+  width: 100%;
+  padding: 0 15px 0 43px;
+}
+
+.appliances-search input::placeholder {
+  color: #656c68;
+}
+
+.appliances-search input:focus,
+.appliances-filter:focus {
+  border-color: rgba(200, 255, 61, 0.35);
+}
+
+.appliances-filter {
+  min-width: 155px;
+  padding: 0 14px;
+  cursor: pointer;
+}
+
+.appliances-filter option {
+  background: #121514;
+  color: var(--color-text);
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.appliances-section-heading {
+  margin-bottom: 20px;
+}
+
+.appliances-section-heading p {
+  margin-bottom: 8px;
+  color: var(--color-accent);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.appliances-section-heading h2 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.appliances-empty {
+  display: flex;
+  min-height: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.015);
+  text-align: center;
+}
+
+.appliances-empty__icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 20px;
+  border-radius: 18px;
+  background: rgba(200, 255, 61, 0.07);
+  color: var(--color-accent);
+}
+
+.appliances-empty h3 {
+  margin-bottom: 9px;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.appliances-empty p {
+  max-width: 440px;
+  color: var(--color-text-muted);
+  font-size: 0.83rem;
+  line-height: 1.6;
+}
+
+.appliances-empty--error {
+  border-color: rgba(255, 100, 100, 0.16);
+}
+
+.appliances-empty--error p {
+  color: #ff9b9b;
+}
+
+/* =========================================
+   APPLIANCE GRID
+========================================= */
+
+.appliances-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.appliance-list-card {
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr);
+  gap: 20px;
+  min-height: 205px;
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.012)
+    );
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.appliance-list-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200, 255, 61, 0.16);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.018)
+    );
+}
+
+.appliance-list-card__image {
+  display: grid;
+  place-items: center;
+  width: 145px;
+  height: 175px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--color-surface-soft);
+  color: var(--color-text-muted);
+}
+
+.appliance-list-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.appliance-list-card__content {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 7px 5px 5px 0;
+}
+
+.appliance-list-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.appliance-list-card__top > span {
+  color: var(--color-accent);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.appliance-list-card__top small {
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  color: var(--color-text-muted);
+  font-size: 0.58rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.appliance-list-card__top small.is-active {
+  border-color: rgba(200, 255, 61, 0.14);
+  background: rgba(200, 255, 61, 0.05);
+  color: var(--color-accent);
+}
+
+.appliance-list-card h3 {
+  margin-bottom: 6px;
+  font-size: 1.18rem;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.appliance-list-card__content > p {
+  color: var(--color-text-muted);
+  font-size: 0.76rem;
+}
+
+.appliance-list-card__footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.appliance-list-card__footer > span {
+  max-width: 160px;
+  overflow: hidden;
+  color: #737a76;
+  font-size: 0.59rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.appliance-list-card__footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--color-text);
+  font-size: 0.68rem;
+  font-weight: 600;
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.appliance-list-card__footer a:hover {
+  gap: 10px;
+  color: var(--color-accent);
+}
+
+.appliance-list-card__footer a svg {
+  font-size: 0.6rem;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+  .appliances-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .appliances-page {
+    padding: 50px 0 70px;
+  }
+
+  .appliances-header {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 38px;
+  }
+
+  .appliances-header h1 {
+    font-size: clamp(2.6rem, 11vw, 4.4rem);
+  }
+
+  .appliances-add-button {
+    width: 100%;
+  }
+
+  .appliances-form {
+    grid-template-columns: 1fr;
+  }
+
+  .appliances-form__field--full {
+    grid-column: auto;
+  }
+
+  .appliances-form__actions {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 580px) {
+  .appliances-form-card {
+    padding: 20px;
+  }
+
+  .appliances-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .appliances-filter {
+    width: 100%;
+  }
+
+  .appliance-list-card {
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 14px;
+    min-height: 165px;
+  }
+
+  .appliance-list-card__image {
+    width: 92px;
+    height: 140px;
+  }
+
+  .appliance-list-card__content {
+    padding-right: 0;
+  }
+
+  .appliance-list-card__top {
+    margin-bottom: 12px;
+  }
+
+  .appliance-list-card h3 {
+    font-size: 1rem;
+  }
+
+  .appliance-list-card__footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

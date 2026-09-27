@@ -1,0 +1,57 @@
+.app {
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.app::before {
+  content: "";
+  position: fixed;
+  top: -20%;
+  right: -10%;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: rgba(200, 255, 61, 0.06);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.app::after {
+  content: "";
+  position: fixed;
+  bottom: -20%;
+  left: -10%;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.025);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.container {
+  width: min(100% - 40px, var(--container-width));
+  margin-inline: auto;
+}
+
+::selection {
+  color: var(--color-bg);
+  background: var(--color-accent);
+}
+
+.section {
+  padding-block: 120px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: min(100% - 28px, var(--container-width));
+  }
+
+  .section {
+    padding-block: 80px;
+  }
+}

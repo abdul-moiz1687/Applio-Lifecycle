@@ -1,0 +1,1314 @@
+.appliance-details-page {
+  min-height: calc(100vh - 80px);
+  padding: 50px 0 100px;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.appliance-details-header {
+  margin-bottom: 28px;
+}
+
+.appliance-details-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 28px;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  transition: color 0.2s ease;
+}
+
+.appliance-details-back:hover {
+  color: var(--color-accent);
+}
+
+.appliance-details-back svg {
+  font-size: 0.68rem;
+}
+
+.appliance-details-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+}
+
+.appliance-details-label span {
+  color: var(--color-text-muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.appliance-details-label span:first-child {
+  color: var(--color-accent);
+}
+
+/* =========================================
+   MAIN PASSPORT
+========================================= */
+
+.appliance-passport {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  min-height: 460px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+}
+
+.appliance-passport__visual {
+  position: relative;
+  min-height: 460px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(200, 255, 61, 0.12),
+      transparent 42%
+    ),
+    #101412;
+}
+
+.appliance-passport__visual::before {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+  background-size: 55px 55px;
+  content: "";
+  opacity: 0.45;
+}
+
+.appliance-passport__image {
+  position: absolute;
+  inset: 38px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.appliance-passport__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.appliance-passport__image svg {
+  color: var(--color-text-muted);
+  font-size: 3rem;
+}
+
+.appliance-passport__visual-meta {
+  position: absolute;
+  right: 30px;
+  bottom: 24px;
+  left: 30px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.appliance-passport__visual-meta span {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.appliance-passport__visual-meta span:first-child {
+  color: var(--color-accent);
+}
+
+.appliance-passport__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 55px;
+}
+
+.appliance-passport__intro > p {
+  margin-bottom: 14px;
+  color: var(--color-accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.appliance-passport__intro h1 {
+  max-width: 580px;
+  margin-bottom: 12px;
+  font-size: clamp(2.7rem, 5vw, 5.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+  font-weight: 600;
+}
+
+.appliance-passport__intro > span {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.appliance-passport__status {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: fit-content;
+  padding: 15px 18px;
+  border: 1px solid rgba(200, 255, 61, 0.13);
+  border-radius: 16px;
+  background: rgba(200, 255, 61, 0.04);
+}
+
+.appliance-passport__status > svg {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+}
+
+.appliance-passport__status span,
+.appliance-passport__status strong {
+  display: block;
+}
+
+.appliance-passport__status span {
+  margin-bottom: 4px;
+  color: var(--color-text-muted);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+}
+
+.appliance-passport__status strong {
+  color: #ff9b9b;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.appliance-passport__status strong.is-active {
+  color: var(--color-accent);
+}
+
+/* =========================================
+   DETAILS GRID
+========================================= */
+
+.appliance-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.appliance-info-card {
+  min-height: 300px;
+  padding: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.appliance-info-card__heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-bottom: 30px;
+}
+
+.appliance-info-card__heading > svg {
+  margin-top: 3px;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+}
+
+.appliance-info-card__heading span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--color-accent);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.appliance-info-card__heading h2 {
+  font-size: 1.45rem;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+/* =========================================
+   IDENTITY
+========================================= */
+
+.appliance-info-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.appliance-info-list > div {
+  padding: 17px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.appliance-info-list > div:nth-child(odd) {
+  padding-right: 20px;
+}
+
+.appliance-info-list > div:nth-child(even) {
+  padding-left: 20px;
+  border-left: 1px solid var(--color-border);
+}
+
+.appliance-info-list span,
+.appliance-info-list strong {
+  display: block;
+}
+
+.appliance-info-list span {
+  margin-bottom: 6px;
+  color: var(--color-text-muted);
+  font-size: 0.62rem;
+}
+
+.appliance-info-list strong {
+  overflow: hidden;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-overflow: ellipsis;
+}
+
+/* =========================================
+   WARRANTY
+========================================= */
+
+.appliance-warranty__status {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: 15px;
+  background: rgba(200, 255, 61, 0.045);
+}
+
+.appliance-warranty__status > svg {
+  color: var(--color-accent);
+}
+
+.appliance-warranty__status span,
+.appliance-warranty__status strong {
+  display: block;
+}
+
+.appliance-warranty__status span {
+  margin-bottom: 4px;
+  color: var(--color-text-muted);
+  font-size: 0.61rem;
+}
+
+.appliance-warranty__status strong {
+  color: var(--color-accent);
+  font-size: 0.8rem;
+}
+
+.appliance-warranty__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.appliance-warranty__row span {
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+}
+
+.appliance-warranty__row strong {
+  font-size: 0.76rem;
+  font-weight: 500;
+  text-align: right;
+}
+
+/* =========================================
+   QR
+========================================= */
+
+.appliance-info-card--qr {
+  min-height: 350px;
+}
+
+.appliance-qr-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.appliance-qr-placeholder {
+  display: grid;
+  place-items: center;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 18px;
+  border: 1px dashed rgba(200, 255, 61, 0.25);
+  border-radius: 18px;
+  background: rgba(200, 255, 61, 0.025);
+  color: var(--color-accent);
+  font-size: 2rem;
+}
+
+.appliance-qr-empty p {
+  max-width: 310px;
+  margin-bottom: 18px;
+  color: var(--color-text-muted);
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+
+.appliance-qr-empty button,
+.appliance-qr-result button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #0b0d0c;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.appliance-qr-empty button:hover,
+.appliance-qr-result button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(200, 255, 61, 0.12);
+}
+
+.appliance-qr-empty button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.appliance-qr-result {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.appliance-qr-result img {
+  width: 155px;
+  height: 155px;
+  flex-shrink: 0;
+  padding: 10px;
+  border-radius: 15px;
+  background: white;
+}
+
+.appliance-qr-result p {
+  margin-bottom: 17px;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   LIFECYCLE
+========================================= */
+
+.appliance-lifecycle {
+  display: flex;
+  flex-direction: column;
+}
+
+.appliance-lifecycle > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 19px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.appliance-lifecycle span {
+  color: var(--color-text-muted);
+  font-size: 0.68rem;
+}
+
+.appliance-lifecycle strong {
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* =========================================
+   LOADING / ERROR
+========================================= */
+
+.appliance-details-state {
+  display: flex;
+  min-height: 500px;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.appliance-details-state--error {
+  flex-direction: column;
+  gap: 15px;
+  color: #ff9b9b;
+}
+
+.appliance-details-state--error a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+}
+
+.appliance-details-state--error a:hover {
+  color: var(--color-accent);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .appliance-passport {
+    grid-template-columns: 1fr;
+  }
+
+  .appliance-passport__visual {
+    min-height: 380px;
+  }
+
+  .appliance-passport__main {
+    min-height: 390px;
+  }
+
+  .appliance-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .appliance-details-page {
+    padding: 35px 0 70px;
+  }
+
+  .appliance-details-label {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .appliance-passport {
+    border-radius: 22px;
+  }
+
+  .appliance-passport__visual {
+    min-height: 310px;
+  }
+
+  .appliance-passport__image {
+    inset: 22px;
+  }
+
+  .appliance-passport__visual-meta {
+    right: 20px;
+    bottom: 17px;
+    left: 20px;
+  }
+
+  .appliance-passport__main {
+    min-height: 360px;
+    padding: 30px 24px;
+  }
+
+  .appliance-passport__intro h1 {
+    font-size: clamp(2.5rem, 13vw, 4rem);
+  }
+
+  .appliance-passport__status {
+    width: 100%;
+  }
+
+  .appliance-info-card {
+    min-height: auto;
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .appliance-info-list {
+    grid-template-columns: 1fr;
+  }
+
+  .appliance-info-list > div:nth-child(odd) {
+    padding-right: 0;
+  }
+
+  .appliance-info-list > div:nth-child(even) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .appliance-qr-result {
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .appliance-qr-result img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* =========================================
+   HEADER ACTIONS
+========================================= */
+
+.appliance-details-header__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.appliance-details-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.appliance-details-edit,
+.appliance-details-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 15px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.appliance-details-edit {
+  border: 1px solid rgba(200, 255, 61, 0.18);
+  background: rgba(200, 255, 61, 0.06);
+  color: var(--color-accent);
+}
+
+.appliance-details-delete {
+  border: 1px solid rgba(255, 100, 100, 0.14);
+  background: rgba(255, 100, 100, 0.04);
+  color: #ff9b9b;
+}
+
+.appliance-details-edit:hover {
+  transform: translateY(-2px);
+  border-color: rgba(200, 255, 61, 0.32);
+  background: rgba(200, 255, 61, 0.09);
+}
+
+.appliance-details-delete:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 100, 100, 0.28);
+  background: rgba(255, 100, 100, 0.08);
+}
+
+/* =========================================
+   EDIT SECTION
+========================================= */
+
+.appliance-edit-section {
+  margin-bottom: 30px;
+}
+
+.appliance-edit-card {
+  padding: 38px;
+  border: 1px solid var(--color-border);
+  border-radius: 28px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.012)
+    );
+}
+
+.appliance-edit-card__heading {
+  margin-bottom: 28px;
+}
+
+.appliance-edit-card__heading p {
+  margin-bottom: 8px;
+  color: var(--color-accent);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.appliance-edit-card__heading h1 {
+  margin-bottom: 8px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  font-weight: 500;
+}
+
+.appliance-edit-card__heading span {
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+}
+
+.appliance-edit__error {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 100, 100, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 100, 100, 0.06);
+  color: #ff9b9b;
+  font-size: 0.76rem;
+}
+
+.appliance-edit-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.appliance-edit-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.appliance-edit-form__field--full {
+  grid-column: 1 / -1;
+}
+
+.appliance-edit-form__field label {
+  color: var(--color-text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.appliance-edit-form__field input {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 13px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--color-text);
+  font-size: 0.8rem;
+  transition: border-color 0.2s ease;
+}
+
+.appliance-edit-form__field input:focus {
+  border-color: rgba(200, 255, 61, 0.4);
+}
+
+.appliance-edit-image {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 15px;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 13px;
+  color: var(--color-text-muted);
+  font-size: 0.74rem;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.appliance-edit-image:hover {
+  border-color: rgba(200, 255, 61, 0.3);
+  color: var(--color-text);
+}
+
+.appliance-edit-image svg {
+  color: var(--color-accent);
+}
+
+.appliance-edit-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  grid-column: 1 / -1;
+  margin-top: 8px;
+}
+
+.appliance-edit-form__cancel,
+.appliance-edit-form__save {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.appliance-edit-form__cancel {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+.appliance-edit-form__save {
+  background: var(--color-accent);
+  color: #0b0d0c;
+}
+
+.appliance-edit-form__save:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   MOBILE ACTIONS
+========================================= */
+
+@media (max-width: 640px) {
+  .appliance-details-header__top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .appliance-details-actions {
+    width: 100%;
+  }
+
+  .appliance-details-edit,
+  .appliance-details-delete {
+    flex: 1;
+  }
+
+  .appliance-edit-card {
+    padding: 24px;
+    border-radius: 22px;
+  }
+
+  .appliance-edit-form {
+    grid-template-columns: 1fr;
+  }
+
+  .appliance-edit-form__field--full,
+  .appliance-edit-form__actions {
+    grid-column: auto;
+  }
+
+  .appliance-edit-form__actions {
+    flex-direction: column-reverse;
+  }
+
+  .appliance-edit-form__cancel,
+  .appliance-edit-form__save {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   SERVICE HISTORY
+========================================= */
+
+.service-history-section {
+  margin-top: 14px;
+}
+
+.service-history-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.service-history-header > div > p {
+  margin-bottom: 8px;
+  color: var(--color-accent);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.service-history-header h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.service-history-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid rgba(200, 255, 61, 0.16);
+  border-radius: 999px;
+  background: rgba(200, 255, 61, 0.05);
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.service-history-add:hover {
+  transform: translateY(-2px);
+  border-color: rgba(200, 255, 61, 0.32);
+  background: rgba(200, 255, 61, 0.08);
+}
+
+/* =========================================
+   SERVICE FORM
+========================================= */
+
+.service-form-card {
+  margin-bottom: 20px;
+  padding: 26px;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.01)
+    );
+}
+
+.service-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.service-form__field--full {
+  grid-column: 1 / -1;
+}
+
+.service-form__field label {
+  color: var(--color-text-muted);
+  font-size: 0.66rem;
+  font-weight: 600;
+}
+
+.service-form__field input,
+.service-form__field textarea {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--color-text);
+  font-size: 0.78rem;
+}
+
+.service-form__field input {
+  height: 48px;
+  padding: 0 14px;
+}
+
+.service-form__field textarea {
+  min-height: 110px;
+  padding: 13px 14px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.service-form__field input:focus,
+.service-form__field textarea:focus {
+  border-color: rgba(200, 255, 61, 0.4);
+}
+
+.service-form__field input::placeholder,
+.service-form__field textarea::placeholder {
+  color: #656c68;
+}
+
+.service-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  grid-column: 1 / -1;
+}
+
+.service-form__submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #0b0d0c;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.service-form__submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.service-form__error {
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 100, 100, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 100, 100, 0.06);
+  color: #ff9b9b;
+  font-size: 0.74rem;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.service-history-empty {
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 24px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.012);
+  text-align: center;
+}
+
+.service-history-empty__icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  background: rgba(200, 255, 61, 0.06);
+  color: var(--color-accent);
+}
+
+.service-history-empty h3 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.service-history-empty p {
+  color: var(--color-text-muted);
+  font-size: 0.76rem;
+}
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.service-history-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-left: 26px;
+}
+
+.service-history-list::before {
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 8px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  content: "";
+}
+
+.service-history-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 16px;
+  padding: 10px 0 22px;
+}
+
+.service-history-item__icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(200, 255, 61, 0.18);
+  border-radius: 13px;
+  background: #121514;
+  color: var(--color-accent);
+  font-size: 0.76rem;
+}
+
+.service-history-item__content {
+  padding: 17px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.02);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.service-history-item__content:hover {
+  transform: translateX(3px);
+  border-color: rgba(200, 255, 61, 0.15);
+}
+
+.service-history-item__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.service-history-item__top span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--color-accent);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.service-history-item__top h3 {
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.service-history-item__top strong {
+  color: var(--color-text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.service-history-item__content > p {
+  margin-top: 12px;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+}
+
+/* =========================================
+   SERVICE HISTORY RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+  .service-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-form__field--full {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .service-history-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .service-history-add {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .service-form {
+    grid-template-columns: 1fr;
+  }
+
+  .service-form__field--full,
+  .service-form__actions {
+    grid-column: auto;
+  }
+
+  .service-form__actions {
+    justify-content: stretch;
+  }
+
+  .service-form__submit {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .service-history-list {
+    padding-left: 20px;
+  }
+
+  .service-history-list::before {
+    left: 6px;
+  }
+
+  .service-history-item {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .service-history-item__icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 0.65rem;
+  }
+
+  .service-history-item__content {
+    padding: 14px;
+  }
+
+  .service-history-item__top {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.service-history-item__actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.service-history-item__actions button {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.service-history-item__actions button:hover {
+  transform: translateY(-2px);
+  color: var(--color-accent);
+  border-color: rgba(200, 255, 61, 0.2);
+  background: rgba(200, 255, 61, 0.05);
+}
+
+.service-history-item__actions button:last-child:hover {
+  color: #ff9b9b;
+  border-color: rgba(255, 100, 100, 0.2);
+  background: rgba(255, 100, 100, 0.05);
+}
+
+.service-form__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.service-form__cancel {
+  min-height: 44px;
+  padding: 0 17px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.service-form__cancel:hover {
+  color: var(--color-text);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 640px) {
+  .service-history-item__top {
+    position: relative;
+    padding-right: 0;
+  }
+
+  .service-history-item__actions {
+    order: 2;
+  }
+
+  .service-history-item__top strong {
+    order: 3;
+  }
+
+  .service-form__actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .service-form__cancel,
+  .service-form__submit {
+    width: 100%;
+  }
+}
