@@ -864,34 +864,34 @@ const ApplianceDetails = () => {
               )}
             </article>
 
-            <article className="appliance-info-card">
-              <div className="appliance-info-card__heading">
-                <FontAwesomeIcon icon={faClock} />
+         <article className="appliance-info-card">
+  <div className="appliance-info-card__heading">
+    <FontAwesomeIcon icon={faClock} />
 
-                <div>
-                  <span>LIFECYCLE</span>
-                  <h2>Record overview</h2>
-                </div>
-              </div>
+    <div>
+      <span>LIFECYCLE</span>
+      <h2>Record overview</h2>
+    </div>
+  </div>
 
-              <div className="appliance-lifecycle">
-                <div>
-                  <span>Service records</span>
+  <div className="appliance-lifecycle">
+    <div>
+      <span>Service records</span>
 
-                  <strong>
-                    {appliance.serviceRecords?.length ||
-                      appliance.services?.length ||
-                      0}
-                  </strong>
-                </div>
+      <strong>
+        {services.length}
+      </strong>
+    </div>
 
-                <div>
-                  <span>Passport created</span>
+    <div>
+      <span>Passport created</span>
 
-                  <strong>{formatDate(appliance.createdAt)}</strong>
-                </div>
-              </div>
-            </article>
+      <strong>
+        {formatDate(appliance.createdAt)}
+      </strong>
+    </div>
+  </div>
+</article>
           </section>
 
           <section className="service-history-section container">
