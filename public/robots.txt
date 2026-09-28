@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /dashboard
+Disallow: /appliances
+Disallow: /login
+Disallow: /register
+
+Sitemap: https://applio-lifecycle.vercel.app/sitemap.xml

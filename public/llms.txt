@@ -1,0 +1,12 @@
+# APPLIO
+
+> APPLIO is a digital appliance passport platform for managing appliance identity, warranties, service history, maintenance records and lifecycle costs.
+
+## Public Pages
+
+- [Home](https://applio-lifecycle.vercel.app/): APPLIO overview and digital appliance passport introduction.
+- [How It Works](https://applio-lifecycle.vercel.app/how-it-works): How APPLIO manages appliance lifecycle records.
+
+## Public Passport
+
+- [Public Passport](https://applio-lifecycle.vercel.app/passport/): Public read-only appliance passport pages are available through appliance-specific URLs.
